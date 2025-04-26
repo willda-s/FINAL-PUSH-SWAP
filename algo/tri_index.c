@@ -6,11 +6,11 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 16:44:19 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/01 18:59:42 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:42:48 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 int	order_index_sort(t_list **a, int size, int rec, int i)
 {

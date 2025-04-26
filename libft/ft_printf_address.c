@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_hex.c                                    :+:      :+:    :+:   */
+/*   ft_printf_address.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:55:44 by williamguer       #+#    #+#             */
-/*   Updated: 2024/12/13 01:15:55 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 19:11:32 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-size_t	hexa_nbr(unsigned int n)
+size_t	address_nbr(unsigned long n)
 {
 	size_t	nbr;
 
@@ -27,7 +27,7 @@ size_t	hexa_nbr(unsigned int n)
 	return (nbr);
 }
 
-void	ft_puthexa(unsigned int n, bool upper_case)
+void	ft_putaddress(unsigned long n, bool upper_case)
 {
 	char	*strupper;
 	char	*strlower;
@@ -35,15 +35,18 @@ void	ft_puthexa(unsigned int n, bool upper_case)
 	strupper = "0123456789ABCDEF";
 	strlower = "0123456789abcdef";
 	if (n >= 16)
-		ft_puthexa((n / 16), upper_case);
+		ft_putaddress((n / 16), upper_case);
 	if (upper_case == true)
 		write(1, &strupper[n % 16], 1);
 	else
 		write(1, &strlower[n % 16], 1);
 }
 
-int	prt_hexa(unsigned int n, bool upper_case)
+int	prt_address(unsigned long n, bool upper_case)
 {
-	ft_puthexa(n, upper_case);
-	return (hexa_nbr(n));
+	if (!n)
+		return (write(1, "(nil)", 5));
+	write(1, "0x", 2);
+	ft_putaddress(n, upper_case);
+	return (address_nbr(n) + 2);
 }

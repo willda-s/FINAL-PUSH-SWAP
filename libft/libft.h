@@ -6,16 +6,19 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:43:49 by willda-s          #+#    #+#             */
-/*   Updated: 2025/03/26 08:07:32 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/26 03:32:57 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <errno.h>
 # include <limits.h>
+# include <stdarg.h>
 # include <stdbool.h>
 # include <stdint.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -87,29 +90,52 @@ void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putnbr_fd(int n, int fd);
 
-// typedef struct s_list
-// {
-// 	void			*content;
-// 	struct s_list	*next;
-// }					t_list;
+////////////////////////GET_NEXT_LINE///////////////////////////////
 
-// t_list				*ft_lstnew(void *content);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
+# endif
 
-// int					ft_lstsize(t_list *lst);
+char	*get_next_line(int fd);
 
-// void				ft_lstadd_front(t_list **lst, t_list *new);
+char	*ft_strccpy(char *dst, char *src);
 
-// t_list				*ft_lstlast(t_list *lst);
+size_t	ft_strrlen(const char *str);
 
-// void				ft_lstadd_back(t_list **lst, t_list *new);
+char	*ft_strjjoin(char *s1, char const *s2);
 
-// void				ft_lstdelone(t_list *lst, void (*del)(void *));
+int		ft_strcchr(const char *str, int c);
 
-// void				ft_lstclear(t_list **lst, void (*del)(void *));
+char	*ft_strddup(char *dst, char *src);
 
-// void				ft_lstiter(t_list *lst, void (*f)(void *));
+////////////////////////FT_PRINTF///////////////////////////////
 
-// t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-// 						void (*del)(void *));
+int		ft_formatspercentage(va_list args, const char format);
+
+int		ft_putstr(char *str);
+
+int		ft_putnbr(int n);
+
+size_t	hexa_nbr(unsigned int n);
+
+void	ft_puthexa(unsigned int n, bool upper_case);
+
+int		prt_hexa(unsigned int n, bool upper_case);
+
+size_t	address_nbr(unsigned long n);
+
+void	ft_putaddress(unsigned long n, bool upper_case);
+
+int		prt_address(unsigned long n, bool upper_case);
+
+int		ft_putchar(int c);
+
+int		ft_printf(const char *str, ...);
+
+int		ft_putnbr_unsigned(unsigned int n);
+
+char	*ft_itoa_unsigned(unsigned int n);
+
+int		ft_strlenint_unsigned(unsigned int n);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:52:44 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/24 19:15:46 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 21:15:28 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 void	add_front(t_list **lst)
 {
@@ -76,7 +76,7 @@ t_list	*ft_lstlast(t_list *lst)
 	return (tmp);
 }
 
-void	init_list(t_list **lst, int ac, char **av, int format)
+void	init_list(t_list **lst, int ac, char **av)
 {
 	t_list	*node;
 	int		i;
@@ -84,8 +84,6 @@ void	init_list(t_list **lst, int ac, char **av, int format)
 
 	i = 1;
 	j = 0;
-	if (!format)
-		i = 0;
 	while (i < ac)
 	{
 		add_back(lst);

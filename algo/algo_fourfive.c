@@ -6,11 +6,11 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:56:07 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/01 18:59:44 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:42:33 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 static int	get_index_minvalue(t_list *a, int size)
 {

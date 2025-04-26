@@ -6,11 +6,11 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 02:54:12 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/03 07:56:52 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:42:48 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 void	rm_first_node(t_list **lst)
 {

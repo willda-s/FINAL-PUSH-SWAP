@@ -6,16 +6,18 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 02:33:13 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/01 18:59:30 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 20:14:09 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
-int	arg_is_double(int i, int ac, char **av)
+int	arg_is_double(int ac, char **av)
 {
 	int	j;
+	int	i;
 
+	i = 1;
 	while (av[i])
 	{
 		j = i + 1;

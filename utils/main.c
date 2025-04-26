@@ -6,28 +6,20 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 21:53:20 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/24 19:16:37 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/26 00:10:23 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-static void	split_initlst(char **dst, int i, t_list **stack_a)
-{
-	if (check_error(false, i, dst) == 0)
-	{
-		free_str(dst);
-		write(2, "Error\n", 7);
-		exit(-1);
-	}
-	init_list(stack_a, i, dst, false);
-	free_str(dst);
-}
-
-static void	wich_algo(t_list **stack_a, t_list **stack_b)
+static void	wich_algo(t_list **stack_a, t_list **stack_b, int ac)
 {
 	if (!*stack_a)
+	{
+		if (ac > 1)
+			write(2, "Error\n", 7);
 		return ;
+	}
 	if (check_if_sorted(*stack_a) == 1)
 		return ;
 	if (check_if_reversed(*stack_a) == 1)
@@ -51,26 +43,19 @@ int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		i;
-	char	**dst;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ac == 2)
+	if (ac >= 2)
 	{
-		dst = ft_split(av[1], ' ');
-		if (!dst)
-			return (-1);
-		i = ft_countword(av[1], ' ');
-		split_initlst(dst, i, &stack_a);
-	}
-	else
-	{
-		if (check_error(true, ac, av) == 0)
+		if (check_error(ac, av) == 0)
 			return (write(2, "Error\n", 7));
-		init_list(&stack_a, ac, av, true);
+		init_list(&stack_a, ac, av);
+		sort_index(stack_a);
+		wich_algo(&stack_a, &stack_b, ac);
+		free_lst(&stack_a, false);
 	}
-	sort_index(stack_a);
-	wich_algo(&stack_a, &stack_b);
-	free_lst(&stack_a, false);
+	else if (ac == 1)
+		return (-1);
+	return (0);
 }

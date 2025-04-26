@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_printf_conv.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 21:09:01 by willda-s          #+#    #+#             */
-/*   Updated: 2024/11/20 23:45:03 by willda-s         ###   ########.fr       */
+/*   Created: 2024/11/25 01:47:39 by williamguer       #+#    #+#             */
+/*   Updated: 2025/04/25 19:11:32 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (lst)
+	if (!str)
+		return (write(1, "(null)", 6));
+	while (str[i])
 	{
-		lst = lst->next;
+		write(1, &str[i], 1);
 		i++;
 	}
 	return (i);
 }
-/*
-int	main(void)
-{
-	t_list *aa;
-	t_list *bb;
 
-	bb = ft_lstnew(NULL);
-	bb->next = NULL;
-	aa = ft_lstnew(NULL);
-	aa->next = bb;
-	printf("%d", ft_lstsize(aa));
-}*/
+int	ft_putnbr(int n)
+{
+	int		len;
+	char	*res;
+
+	len = 0;
+	res = ft_itoa(n);
+	len = ft_putstr(res);
+	free(res);
+	return (len);
+}

@@ -6,12 +6,11 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 22:09:15 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/03 07:49:17 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/26 03:33:37 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf/ft_printf.h"
-#include "libft/libft.h"
+#include "../libft/libft.h"
 
 typedef struct s_list
 {
@@ -23,7 +22,7 @@ typedef struct s_list
 
 ///////////////// UTILS ///////////////////////
 
-void				init_list(t_list **lst, int ac, char **av, int format);
+void				init_list(t_list **lst, int ac, char **av);
 
 void				rm_first_node(t_list **lst);
 
@@ -67,15 +66,13 @@ bool				is_digit(char c);
 
 bool				is_sign(char c);
 
-size_t				ft_countword(char const *s, char c);
-
 int					arg_isnt_digit(char *dst);
 
-int					arg_is_double(int i, int ac, char **av);
+int					arg_is_double(int ac, char **av);
 
 bool				check_atol(const char *str);
 
-int					check_error(bool format, int ac, char **av);
+int					check_error(int ac, char **av);
 
 int					check_if_sorted(t_list *a);
 
@@ -106,5 +103,3 @@ void				sort_index(t_list *a);
 ////////////////// FREE  ///////////////
 
 void				free_lst(t_list **lst, bool error);
-
-void				free_str(char **s);

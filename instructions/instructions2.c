@@ -6,11 +6,11 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 00:03:12 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/01 18:59:36 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:42:48 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 void	rotate_a(t_list **a)
 {

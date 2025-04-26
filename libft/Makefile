@@ -4,6 +4,8 @@ RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
 HEADER			= libft.h
 
+vpath %.o obj
+
 SRCS			= 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 					ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 					ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
@@ -12,36 +14,29 @@ SRCS			= 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 					ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
 					ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c \
 					ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
-					ft_tolower.c ft_toupper.c
+					ft_tolower.c ft_toupper.c get_next_line.c get_next_line_utils.c \
+					itoa.c ft_printf_address.c ft_printf_conv.c \
+					ft_printf_hex.c ft_printf_uns.c ft_printf.c \
 
-OBJS			= $(SRCS:.c=.o)
+OBJ_DIR = obj/
 
-BONUS			=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
-					ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
-					ft_lstmap_bonus.c
+OBJS			= $(SRCS:%.c=$(OBJ_DIR)%.o)
 
-BONUS_OBJS		= $(BONUS:.c=.o) $(OBJS)
-
-
-all:	$(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o : %.c $(HEADER)
+$(OBJ_DIR)%.o : %.c $(HEADER) Makefile
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
-	$(RM) *.o
+	rm -rf $(OBJ_DIR)
 
 fclean:	clean
 	$(RM) $(NAME)
 
-
 re:	fclean $(NAME)
 
-bonus:	$(BONUS_OBJS)
-	@$(MAKE) -s OBJS="$(BONUS_OBJS)"
-
-
-.PHONY:            all clean fclean re bonus
+.PHONY: all clean fclean re

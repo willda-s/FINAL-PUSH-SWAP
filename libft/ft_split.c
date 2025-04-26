@@ -6,7 +6,7 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:37:18 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/03 08:18:50 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 19:39:57 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,3 +105,22 @@ char	**ft_split(char const *s, char c)
 	}
 	return (dst);
 }
+
+/*
+int	main(void)
+{
+	char *s;
+	char **str;
+	size_t	i;
+
+	i = 0;
+	s = "bonjour comment va";
+	str = ft_split(s, ' ');
+	while(str[i])
+	{
+		printf("%s\n", str[i]);
+		i++;
+	}
+	ft_free(str, i);
+
+}*/

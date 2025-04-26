@@ -6,11 +6,11 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 23:00:11 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/01 18:59:37 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:42:48 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 void	swap_a(t_list **a)
 {

@@ -6,11 +6,11 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 01:57:59 by willda-s          #+#    #+#             */
-/*   Updated: 2025/04/01 18:59:28 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/26 03:50:39 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 bool	check_atol(const char *str)
 {
@@ -35,7 +35,7 @@ bool	check_atol(const char *str)
 		i++;
 	}
 	nb *= sign;
-	if ((nb > INT_MAX) || (nb < INT_MIN))
+	if (((nb > INT_MAX) || (nb < INT_MIN)) || ft_strlen(str) > 11)
 		return (false);
 	return (true);
 }

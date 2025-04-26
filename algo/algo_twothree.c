@@ -6,11 +6,11 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 18:00:04 by williamguer       #+#    #+#             */
-/*   Updated: 2025/04/01 18:59:43 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 18:42:48 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 int	sort_two(t_list **lsta)
 {

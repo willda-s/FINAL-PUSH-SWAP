@@ -6,11 +6,11 @@
 /*   By: willda-s <willda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 13:08:36 by williamguer       #+#    #+#             */
-/*   Updated: 2024/12/13 03:03:56 by willda-s         ###   ########.fr       */
+/*   Updated: 2025/04/25 19:11:32 by willda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_putchar(int c)
 {
